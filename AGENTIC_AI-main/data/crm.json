@@ -1,0 +1,30 @@
+{
+  "contact": [
+    {
+      "id": "c-001",
+      "name": "Aarav Mehta",
+      "email": "aarav.mehta@example.com",
+      "company": "Mehta Textiles"
+    },
+    {
+      "id": "c-002",
+      "name": "Priya Sharma",
+      "email": "priya.sharma@example.com",
+      "company": "Sharma Logistics"
+    }
+  ],
+  "deal": [
+    {
+      "id": "d-001",
+      "contact_id": "c-001",
+      "stage": "negotiation",
+      "value": 15400.0
+    },
+    {
+      "id": "d-002",
+      "contact_id": "c-002",
+      "stage": "prospecting",
+      "value": 8200.5
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+:root {
+  color-scheme: dark;
+  font-family: 'DM Sans', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #10110f;
+  font-optical-sizing: auto;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; }
+::selection { background: rgba(210, 243, 107, .25); color: #f4f4ec; }
+::-webkit-scrollbar { width: 7px; height: 7px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #363730; border-radius: 99px; }
+
+.auth-input {
+  display: block;
+  width: 100%;
+  height: 43px;
+  border: 1px solid #30312c;
+  border-radius: 10px;
+  background: #11120f;
+  padding: 0 12px;
+  color: #ededE6;
+  font-size: 12px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+.auth-input::placeholder { color: #686963; }
+.auth-input:focus { border-color: rgba(210, 243, 107, .45); box-shadow: 0 0 0 3px rgba(210, 243, 107, .06); }
+
+html[data-theme='light'] {
+  color-scheme: light;
+  background: #f5f6f2;
+}
+
+html[data-theme='light'] body {
+  background: #f5f6f2;
+  color: #292b25;
+}
+
+html[data-theme='light'] .bg-canvas {
+  background-color: #f5f6f2 !important;
+}
+
+html[data-theme='light'] [class*="bg-[#10110f]"],
+html[data-theme='light'] [class*="bg-[#11120f]"] {
+  background-color: #f8f9f6 !important;
+}
+
+html[data-theme='light'] [class*="bg-[#141512]"],
+html[data-theme='light'] [class*="bg-[#171815]"],
+html[data-theme='light'] [class*="bg-[#191a17]"],
+html[data-theme='light'] [class*="bg-[#1b1c19]"] {
+  background-color: #fff !important;
+}
+
+html[data-theme='light'] [class*="bg-[#1a1b18]"],
+html[data-theme='light'] [class*="bg-[#1d1e1a]"] {
+  background-color: #f0f1ec !important;
+}
+
+html[data-theme='light'] [class*="bg-[#22231f]"] {
+  background-color: #e8e9e3 !important;
+}
+
+html[data-theme='light'] [class*="bg-white/"] {
+  background-color: rgb(38 40 32 / 5%) !important;
+}
+
+html[data-theme='light'] [class*="border-[#"],
+html[data-theme='light'] .border-line {
+  border-color: #e1e3db !important;
+}
+
+html[data-theme='light'] [class*="text-[#"],
+html[data-theme='light'] .text-white {
+  color: #30322c !important;
+}
+
+html[data-theme='light'] .text-lime {
+  color: #536d1d !important;
+}
+
+html[data-theme='light'] .bg-lime {
+  background-color: #d2f36b !important;
+}
+
+html[data-theme='light'] [class*="text-emerald-300"] {
+  color: #176b48 !important;
+}
+
+html[data-theme='light'] [class*="bg-emerald-400/10"] {
+  background-color: rgb(16 132 86 / 12%) !important;
+}
+
+html[data-theme='light'] [class*="text-red-300"] {
+  color: #a83232 !important;
+}
+
+html[data-theme='light'] [class*="bg-red-400/10"] {
+  background-color: rgb(190 45 45 / 10%) !important;
+}
+
+html[data-theme='light'] [class*="text-blue-300"],
+html[data-theme='light'] [class*="text-blue-200"] {
+  color: #245c9d !important;
+}
+
+html[data-theme='light'] [class*="bg-blue-400/10"] {
+  background-color: rgb(45 100 180 / 10%) !important;
+}
+
+html[data-theme='light'] [class*="text-violet-300"] {
+  color: #6842a0 !important;
+}
+
+html[data-theme='light'] [class*="bg-violet-400/10"] {
+  background-color: rgb(107 66 160 / 10%) !important;
+}
+
+html[data-theme='light'] [class*="text-amber-200"] {
+  color: #80500a !important;
+}
+
+html[data-theme='light'] [class*="bg-amber-300/10"] {
+  background-color: rgb(170 105 10 / 10%) !important;
+}
+
+html[data-theme='light'] .bg-canvas,
+html[data-theme='light'] header {
+  color: #30322c;
+}
+
+html[data-theme='light'] header {
+  border-color: #e1e3db;
+  background-color: rgb(248 249 246 / 92%);
+}
+
+html[data-theme='light'] .auth-input {
+  border-color: #d9dbd3;
+  background: #f8f9f6;
+  color: #292b25;
+}
+
+html[data-theme='light'] .auth-input::placeholder {
+  color: #7c7e75;
+}
+
+html[data-theme='light'] .auth-input:focus {
+  border-color: #879d4d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

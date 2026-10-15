@@ -1,0 +1,12 @@
+# STUB — orchestrates API, Redis, PostgreSQL, and Qdrant once those
+# integrations (memory/, orchestrator/state.py persistence) are implemented.
+# services:
+#   api:
+#     build: ..
+#     ports: ["8000:8000"]
+#   redis:
+#     image: redis:7
+#   postgres:
+#     image: postgres:16
+#   qdrant:
+#     image: qdrant/qdrant
