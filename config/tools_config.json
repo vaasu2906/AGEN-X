@@ -1,0 +1,34 @@
+{
+  "tools": [
+    {
+      "name": "database",
+      "module": "src.tools.connectors.db_connector",
+      "class": "DBConnector"
+    },
+    {
+      "name": "email",
+      "module": "src.tools.connectors.mail_connector",
+      "class": "MailConnector"
+    },
+    {
+      "name": "crm",
+      "module": "src.tools.connectors.crm_connector",
+      "class": "CRMConnector"
+    },
+    {
+      "name": "spreadsheet",
+      "module": "src.tools.connectors.sheets_connector",
+      "class": "SheetsConnector"
+    },
+    {
+      "name": "coder",
+      "module": "src.tools.connectors.coder_connector",
+      "class": "CoderConnector"
+    },
+    {
+      "name": "extractor",
+      "module": "src.tools.connectors.extractor_connector",
+      "class": "ExtractorConnector"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+# Sovereign Model Layer routing table (PEC-Auto paper, Section 4.4).
+#
+# Binds each internal *role* to a primary local model and a fallback, so
+# callers (PlannerAgent, CriticAgent, the coder tool, ...) depend on a
+# role - "planner", "critic", "extractor", "coder" - never on a specific
+# model name. src/llm/gateway.py loads this file; edit it (or override
+# per-field via env vars, see .env.example) to point at whatever you have
+# pulled/served locally. Nothing here is a paid API - every model below
+# is open-weight and meant to run through Ollama or vLLM on your own
+# hardware.
+#
+# model / fallback names are logical ids; src/llm/gateway.py::OLLAMA_TAGS
+# maps them to the actual `ollama pull` tag. For vLLM they are used
+# as-is, so set them to whatever --served-model-name your vLLM instance
+# exposes.
+
+planner:
+  model: hermes3-8b
+  fallback: llama3.2-1b
+  max_tokens: 2000
+  temperature: 0.1
+
+critic:
+  model: hermes3-8b        # LLM-judge only; deterministic checks stay authoritative
+  fallback: llama3.2-1b
+  max_tokens: 800
+  temperature: 0.0
+
+extractor:
+  model: hermes3-8b         # document/field extraction
+  fallback: null
+  max_tokens: 1200
+  temperature: 0.0
+
+coder:
+  model: qwen2.5-coder-32b       # code / SQL / formula generation
+  fallback: deepseek-coder-v2-lite
+  max_tokens: 4000
+  temperature: 0.1

@@ -1,0 +1,32 @@
+# Core - required for Objectives 1 & 2 (works with zero setup / no API key)
+pytest>=8.0.0
+openpyxl>=3.1.0
+
+# LangChain / LangGraph integration
+langchain-core>=1.6.0
+langgraph>=1.2.0
+
+# Sovereign Model Layer (Objective 9 / paper Section 4) - role-routed
+# calls to locally hosted models (Hermes 3, Qwen2.5-Coder, DeepSeek-
+# Coder-V2) served through Ollama/vLLM's OpenAI-compatible endpoint.
+# Required for src/llm/gateway.py; with no server reachable, every
+# caller still falls back deterministically, so this doesn't block the
+# zero-setup demo path.
+requests>=2.31.0
+pyyaml>=6.0
+
+# Optional - only used as an explicitly opted-into cloud dev fallback
+# (AGENTIC_ALLOW_CLOUD_FALLBACK=1 + ANTHROPIC_API_KEY set) when no local
+# model is reachable. Not required otherwise.
+anthropic>=0.40.0
+
+# Not yet used by any implemented code - required once the corresponding
+# stub modules (Objectives 3, 6, 7) are built out:
+# fastapi>=0.115.0          # src/api/main.py
+# uvicorn>=0.30.0           # src/api/main.py
+# celery>=5.4.0             # src/api/workers/tasks.py
+# redis>=5.0.0              # src/memory/session_memory.py
+# qdrant-client>=1.11.0     # src/memory/vector_store.py
+# sqlalchemy>=2.0.0         # src/orchestrator/state.py persistence
+# psycopg2-binary>=2.9.0    # src/orchestrator/state.py persistence
+# opentelemetry-sdk>=1.27.0 # src/observability/tracer.py
